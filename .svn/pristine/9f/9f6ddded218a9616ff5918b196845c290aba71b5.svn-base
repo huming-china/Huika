@@ -1,0 +1,14 @@
+apply plugin: 'com.android.application'
+apply from: '../global_config.gradle'
+//apply from: '../qa_config/quality.gradle'
+
+android {
+  defaultConfig {
+    applicationId "com.huika.hkmall"
+    minSdkVersion 15
+    targetSdkVersion 23
+    versionCode 1
+    versionName "1.0"
+  }
+}
+

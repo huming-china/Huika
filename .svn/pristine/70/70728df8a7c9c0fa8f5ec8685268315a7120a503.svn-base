@@ -1,0 +1,120 @@
+<!--<?xml version="1.0"?>-->
+<!--<!DOCTYPE module PUBLIC-->
+    <!--"-//Puppy Crawl//DTD Check Configuration 1.2//EN"-->
+    <!--"http://www.puppycrawl.com/dtds/configuration_1_2.dtd">-->
+
+<!--<module name="Checker">-->
+    <!--&lt;!&ndash;module name="NewlineAtEndOfFile"/&ndash;&gt;-->
+    <!--<module name="FileLength"/>-->
+    <!--<module name="FileTabCharacter"/>-->
+
+    <!--&lt;!&ndash; Trailing spaces &ndash;&gt;-->
+    <!--<module name="RegexpSingleline">-->
+        <!--<property name="format" value="\s+$"/>-->
+        <!--<property name="message" value="Line has trailing spaces."/>-->
+    <!--</module>-->
+
+    <!--<module name="TreeWalker">-->
+        <!--<property name="cacheFile" value="${checkstyle.cache.file}"/>-->
+
+        <!--&lt;!&ndash; Checks for Javadoc comments.                     &ndash;&gt;-->
+        <!--&lt;!&ndash; See http://checkstyle.sf.net/config_javadoc.html &ndash;&gt;-->
+        <!--&lt;!&ndash;module name="JavadocMethod"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="JavadocType"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="JavadocVariable"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="JavadocStyle"/&ndash;&gt;-->
+
+
+        <!--&lt;!&ndash; Checks for Naming Conventions.                  &ndash;&gt;-->
+        <!--&lt;!&ndash; See http://checkstyle.sf.net/config_naming.html &ndash;&gt;-->
+        <!--&lt;!&ndash;module name="ConstantName"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="LocalFinalVariableName"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="LocalVariableName"/&ndash;&gt;-->
+        <!--<module name="MemberName"/>-->
+        <!--&lt;!&ndash;module name="MethodName"/&ndash;&gt;-->
+        <!--<module name="PackageName"/>-->
+        <!--&lt;!&ndash;module name="ParameterName"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="StaticVariableName"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="TypeName"/&ndash;&gt;-->
+
+
+        <!--&lt;!&ndash; Checks for imports                              &ndash;&gt;-->
+        <!--&lt;!&ndash; See http://checkstyle.sf.net/config_import.html &ndash;&gt;-->
+        <!--<module name="AvoidStarImport"/>-->
+        <!--<module name="IllegalImport"/> &lt;!&ndash; defaults to sun.* packages &ndash;&gt;-->
+        <!--<module name="RedundantImport"/>-->
+        <!--<module name="UnusedImports"/>-->
+
+
+        <!--&lt;!&ndash; Checks for Size Violations.                    &ndash;&gt;-->
+        <!--&lt;!&ndash; See http://checkstyle.sf.net/config_sizes.html &ndash;&gt;-->
+        <!--&lt;!&ndash;module name="LineLength"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="MethodLength"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="ParameterNumber"/&ndash;&gt;-->
+
+
+        <!--&lt;!&ndash; Checks for whitespace                               &ndash;&gt;-->
+        <!--&lt;!&ndash; See http://checkstyle.sf.net/config_whitespace.html &ndash;&gt;-->
+        <!--&lt;!&ndash;module name="EmptyForIteratorPad"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="MethodParamPad"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="NoWhitespaceAfter"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="NoWhitespaceBefore"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="OperatorWrap"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="ParenPad"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="TypecastParenPad"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="WhitespaceAfter"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="WhitespaceAround"/&ndash;&gt;-->
+
+
+        <!--&lt;!&ndash; Modifier Checks                                    &ndash;&gt;-->
+        <!--&lt;!&ndash; See http://checkstyle.sf.net/config_modifiers.html &ndash;&gt;-->
+        <!--&lt;!&ndash;module name="ModifierOrder"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="RedundantModifier"/&ndash;&gt;-->
+
+
+        <!--&lt;!&ndash; Checks for blocks. You know, those {}'s         &ndash;&gt;-->
+        <!--&lt;!&ndash; See http://checkstyle.sf.net/config_blocks.html &ndash;&gt;-->
+        <!--&lt;!&ndash;module name="AvoidNestedBlocks"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="EmptyBlock"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="LeftCurly"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="NeedBraces"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="RightCurly"/&ndash;&gt;-->
+
+
+        <!--&lt;!&ndash; Checks for common coding problems               &ndash;&gt;-->
+        <!--&lt;!&ndash; See http://checkstyle.sf.net/config_coding.html &ndash;&gt;-->
+        <!--&lt;!&ndash;module name="AvoidInlineConditionals"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="EmptyStatement"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="EqualsHashCode"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="HiddenField"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="IllegalInstantiation"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="InnerAssignment"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="MagicNumber"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="MissingSwitchDefault"/&ndash;&gt;-->
+        <!--<module name="RedundantThrows"/>-->
+        <!--&lt;!&ndash;module name="SimplifyBooleanExpression"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="SimplifyBooleanReturn"/&ndash;&gt;-->
+        <!--<module name="StringLiteralEquality"/>-->
+        <!--<module name="CovariantEquals"/>-->
+        <!--&lt;!&ndash;module name="NoClone"/&ndash;&gt;-->
+        <!--<module name="NoFinalizer"/>-->
+        <!--<module name="PackageDeclaration"/>-->
+        <!--&lt;!&ndash;module name="FallThrough"/&ndash;&gt;-->
+
+        <!--&lt;!&ndash; Checks for class design                         &ndash;&gt;-->
+        <!--&lt;!&ndash; See http://checkstyle.sf.net/config_design.html &ndash;&gt;-->
+        <!--&lt;!&ndash;module name="DesignForExtension"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="FinalClass"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="HideUtilityClassConstructor"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="InterfaceIsType"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="VisibilityModifier"/&ndash;&gt;-->
+
+
+        <!--&lt;!&ndash; Miscellaneous other checks.                   &ndash;&gt;-->
+        <!--&lt;!&ndash; See http://checkstyle.sf.net/config_misc.html &ndash;&gt;-->
+        <!--&lt;!&ndash;module name="ArrayTypeStyle"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="FinalParameters"/&ndash;&gt;-->
+        <!--&lt;!&ndash;module name="TodoComment"/&ndash;&gt;-->
+        <!--<module name="UpperEll"/>-->
+    <!--</module>-->
+<!--</module>-->

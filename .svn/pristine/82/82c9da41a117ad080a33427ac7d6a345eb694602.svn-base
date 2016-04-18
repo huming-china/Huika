@@ -1,0 +1,922 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.huika.lib.core.ext.widget.pulltorefresh.PullableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ptr_scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+   >
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <!-- 登录与否状态 -->
+
+        <RelativeLayout
+            android:id="@+id/login_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/my_head_bg"
+            android:maxHeight="200dp"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            android:tag="clickable" >
+
+            <com.huika.hkmall.ui.views.RoundImageView
+                android:id="@+id/my_login_state_avater"
+                android:layout_width="63dp"
+                android:layout_height="63dp"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_default_avater"
+                android:tag="clickable" />
+
+            <ImageView
+                android:id="@+id/iv_mycode"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_alignParentRight="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_my_mycode" />
+            <RelativeLayout
+                android:id="@+id/my_login_state_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@+id/my_login_state_avater"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/my_login_state_nick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:drawablePadding="5dp"
+                    android:tag="clickable"
+                    android:text="@string/my_login"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/my_distributors_logo_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/my_login_state_nick"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/me_distribution_logo"
+                    android:tag="clickable" />
+
+                <ImageView
+                    android:id="@+id/my_agent_logo_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/my_login_state_nick"
+                    android:layout_marginRight="5dp"
+                    android:layout_toRightOf="@id/my_distributors_logo_iv"
+                    android:paddingLeft="10dp"
+                    android:tag="clickable"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/upgrade_hf_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/my_login_state_nick"
+                    android:layout_marginRight="10dp"
+                    android:layout_toRightOf="@id/my_distributors_logo_iv"
+                    android:singleLine="true"
+                    android:tag="clickable"
+                    android:gravity="center"
+                    android:background="@drawable/tv_my_update_huifeng"
+                    android:textColor="#e8e504"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/my_login_huixin_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/my_distributors_logo_iv"
+                    android:layout_marginTop="8dp"
+                    android:tag="clickable"
+                    android:visibility="gone"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/my_settingjump_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/me_setting"
+                android:tag="clickable" />
+            <TextView
+                android:id="@+id/join_huika_tv"
+                android:layout_width="70dp"
+                android:layout_height="25dp"
+                android:layout_toLeftOf="@+id/my_settingjump_tv"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="12dp"
+                android:text="加盟惠卡"
+                android:background="@drawable/join_huika_ico"
+                android:gravity="center"
+                android:textSize="12dp"
+                android:textColor="#ffffff"
+                android:tag="clickable" />
+
+            <ImageView
+                android:id="@+id/my_code_tv"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/my_settingjump_tv"
+                android:layout_toRightOf="@id/my_settingjump_tv"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_launcher" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                >
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginTop="8dp"
+                    >
+                    <TextView
+                        android:id="@+id/my_footprint_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="我的足迹"
+                        android:textColor="#ffffff"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        />
+                </RelativeLayout>
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#f0a8a6"
+                    />
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginTop="8dp"
+                    >
+                    <TextView
+                        android:id="@+id/join_favorites"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="收藏夹"
+                        android:textColor="#ffffff"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        />
+                </RelativeLayout>
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#f0a8a6"
+                    />
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    >
+                    <TextView
+                        android:id="@+id/guide_huika_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:text="惠卡指南"
+                        android:textColor="#ffffff"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        />
+
+                    <TextView
+                        android:layout_width="19dp"
+                        android:layout_height="13dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/ic_my_huika_guide"
+                        />
+                </RelativeLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+        <!-- 登录与否状态  end -->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:background="@color/common_bg_gray" />
+
+        <!-- 我的订单 -->
+
+        <!-- <TextView
+            android:id="@+id/see_all_order"
+            style="@style/me_section_title_left"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/selector_section_item"
+            android:drawableRight="@drawable/icon_section_right_arrow"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:tag="clickable"
+            android:text="@string/shop_order_title" /> -->
+
+        <LinearLayout
+            android:id="@+id/see_all_order"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/selector_section_item"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/me_section_title_left"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_me_section_title_left"
+                android:drawablePadding="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="购物订单" />
+
+            <TextView
+                style="@style/me_section_title_left"
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+                android:drawablePadding="5dp"
+                android:drawableRight="@drawable/icon_section_right_arrow"
+                android:gravity="right|center_vertical"
+                android:text="查看全部订单"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:singleLine="true"
+                android:textColor="@color/color_cccccc"
+                android:textSize="11sp" />
+        </LinearLayout>
+        <!-- 我的订单end -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@drawable/rect_section"
+            android:orientation="horizontal" >
+
+            <!-- 商城订单的流程 -->
+
+            <RelativeLayout
+                android:id="@+id/my_order_rl"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:tag="clickable" >
+
+                <TextView
+                    android:id="@+id/my_order_tv"
+                    style="@style/me_section_pop_tv"
+                    android:drawableTop="@drawable/my_all_order"
+                    android:gravity="center_horizontal"
+                    android:text="@string/my_order" />
+
+                <TextView
+                    android:id="@+id/my_order_ping_num_tv"
+                    style="@style/me_section_pop_num"
+                    android:layout_alignTop="@+id/my_order_tv"
+                    android:layout_toRightOf="@+id/my_order_tv"
+                    android:visibility="gone" />
+            </RelativeLayout>
+            <!-- 待付尾款的 -->
+
+            <RelativeLayout
+                android:id="@+id/my_order_pay_rl"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:tag="clickable" >
+
+                <TextView
+                    android:id="@+id/my_order_pay_tv"
+                    style="@style/me_section_pop_tv"
+                    android:drawableTop="@drawable/me_order_pay"
+                    android:drawablePadding="2dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/my_order_pay" />
+
+                <TextView
+                    android:id="@+id/my_order_pay_num_tv"
+                    style="@style/me_section_pop_num"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:visibility="gone"
+                    android:layout_alignTop="@+id/my_order_pay_tv"
+                    android:layout_toRightOf="@+id/my_order_pay_tv"
+                    />
+            </RelativeLayout>
+            <!-- 待收货的 -->
+
+            <RelativeLayout
+                android:id="@+id/my_order_receive_rl"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:tag="clickable" >
+
+                <TextView
+                    android:id="@+id/my_order_receive_tv"
+                    style="@style/me_section_pop_tv"
+                    android:drawableTop="@drawable/me_order_receive"
+                    android:drawablePadding="2dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/my_order_receive" />
+
+                <TextView
+                    android:id="@+id/my_order_receive_num_tv"
+                    style="@style/me_section_pop_num"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:visibility="gone"
+                    android:layout_alignTop="@+id/my_order_receive_tv"
+                    android:layout_toRightOf="@+id/my_order_receive_tv"
+                    />
+            </RelativeLayout>
+            <!-- 待评论的 -->
+
+            <RelativeLayout
+                android:id="@+id/my_order_comment_rl"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:tag="clickable" >
+
+                <TextView
+                    android:id="@+id/my_order_comment_tv"
+                    style="@style/me_section_pop_tv"
+                    android:drawableTop="@drawable/me_order_over"
+                    android:drawablePadding="2dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/my_order_over" />
+
+                <TextView
+                    android:id="@+id/my_order_comment_num_tv"
+                    style="@style/me_section_pop_num"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignTop="@+id/my_order_comment_tv"
+                    android:layout_toRightOf="@+id/my_order_comment_tv"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/other_linearlayout_order"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/selector_section_item"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/me_section_title_left"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_me_other_order"
+                android:drawablePadding="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="其他订单" />
+
+            <TextView
+                android:id="@+id/my_other_tv"
+                style="@style/me_section_title_left"
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+                android:drawablePadding="15dp"
+                android:drawableRight="@drawable/icon_section_right_arrow"
+                android:gravity="right|center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:singleLine="true"
+                android:textColor="@color/color_cccccc"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:background="@color/common_bg_gray" />
+
+        <!-- 我的财富start -->
+
+        <TextView
+            android:id="@+id/my_account_tv"
+            style="@style/me_section_title_left"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/selector_section_item"
+            android:drawableRight="@drawable/icon_section_right_arrow"
+            android:drawableLeft="@drawable/ic_my_account_tv"
+            android:drawablePadding="10dp"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:tag="clickable"
+            android:text="@string/my_hkmall_account" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="0.5dp"
+            android:background="@color/white"
+            android:src="#d7d7d7" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp" >
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <TextView
+                    android:id="@+id/hm_tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="惠米余额"
+                    android:gravity="center"
+                    android:textColor="#666666"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/hm_tv_balance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/hm_tv_title"
+                    android:gravity="center"
+                    android:layout_marginTop="2dp"
+                    android:text="0.00"
+                    android:textColor="#333333"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <TextView
+                    android:id="@+id/hf_tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="惠粉总收益"
+                    android:gravity="center"
+                    android:textColor="#666666"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/hf_tv_balance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/hf_tv_title"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="2dp"
+                    android:text="0.00"
+                    android:textColor="#333333"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/relative_fra_me_menoy"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <TextView
+                    android:id="@+id/hfff_tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="现金券"
+                    android:gravity="center"
+                    android:textColor="#666666"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/hfff_tv_menoy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/hfff_tv_title"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#333333"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="0.5dp"
+            android:background="@color/white"
+            android:src="#d7d7d7" />
+
+        <RelativeLayout
+            android:id="@+id/sx_rl_balance"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/selector_section_item"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp" >
+
+            <TextView
+                android:id="@+id/sx_tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_my_sx_tv_title"
+                android:drawablePadding="10dp"
+                android:text="惠粉授信额度"
+                android:textColor="#333333"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/sx_tv_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@id/sx_tv_title"
+                android:layout_marginLeft="5dp"
+                android:gravity="center_vertical"
+                android:text="0"
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/sx_tv_state"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@id/sx_tv_balance"
+                android:gravity="center_vertical"
+                android:textColor="#e12228"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/me_loan_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:drawablePadding="5dp"
+                android:drawableRight="@drawable/icon_section_right_arrow"
+                android:gravity="center_vertical"
+                android:textColor="#cccccc"
+                android:textSize="11sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="128dp"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <RelativeLayout
+                android:id="@+id/hx_rl_purse"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:gravity="center" >
+
+                <ImageView
+                    android:id="@+id/hx_iv_purse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/icomay_hxqb" />
+
+                <TextView
+                    android:id="@+id/hx_tv_html"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/hx_iv_purse"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center_horizontal"
+                    android:text="惠信钱包"
+                    android:textColor="#666666"
+                    android:textSize="11sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/hxb_rl_treasure"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:gravity="center" >
+
+                <ImageView
+                    android:id="@+id/hx_iv_treasure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/icomay_hxb" />
+
+                <TextView
+                    android:id="@+id/hxb_tv_html"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/hx_iv_treasure"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center_horizontal"
+                    android:text="惠信宝"
+                    android:textColor="#666666"
+                    android:textSize="11sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/cyb_rl_carve"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:gravity="center" >
+
+                <ImageView
+                    android:id="@+id/hx_iv_carve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/icomay_cyb" />
+
+                <TextView
+                    android:id="@+id/cyb_tv_html"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/hx_iv_carve"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center_horizontal"
+                    android:text="创业宝"
+                    android:textColor="#666666"
+                    android:textSize="11sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <!-- 我的财富end -->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:background="@color/common_bg_gray" />
+
+        <!-- start 我的文章-->
+
+        <LinearLayout
+            android:id="@+id/my_article_tv"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/selector_section_item"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/me_section_title_left"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_my_article_tv"
+                android:drawablePadding="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="我的文章" />
+
+            <TextView
+                style="@style/me_section_title_left"
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+                android:drawablePadding="5dp"
+                android:drawableRight="@drawable/icon_section_right_arrow"
+                android:gravity="right|center_vertical"
+                android:text="发布，管理文章"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:singleLine="true"
+                android:textColor="@color/color_cccccc"
+                android:textSize="11sp" />
+        </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="-1dp"
+            android:background="@color/white"
+            android:paddingLeft="15dp"
+            android:src="#d7d7d7" />
+
+        <!-- 我的文章end -->
+
+        <!-- 收货地址start -->
+
+        <TextView
+            android:id="@+id/my_hkmall_adress_tv"
+            style="@style/me_section_title_left"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/selector_section_item"
+            android:drawableRight="@drawable/icon_section_right_arrow"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:drawableLeft="@drawable/ic_my_hkmall_adress_tv"
+            android:drawablePadding="10dp"
+            android:tag="clickable"
+            android:text="@string/my_hkmall_shipping_address"
+            />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="-1dp"
+            android:background="@color/white"
+            android:paddingLeft="15dp"
+            android:src="#d7d7d7" />
+
+        <!-- 收货地址end -->
+
+
+        <!-- 我的银行卡start -->
+
+        <TextView
+            android:id="@+id/my_hkmall_bank_tv"
+            style="@style/me_section_title_left"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/selector_section_item"
+            android:drawableRight="@drawable/icon_section_right_arrow"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:drawableLeft="@drawable/ic_my_hkmall_bank_tv"
+            android:drawablePadding="10dp"
+            android:tag="clickable"
+            android:text="@string/my_hkmall_bank" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="-1dp"
+            android:background="@color/white"
+            android:paddingLeft="15dp"
+            android:src="#d7d7d7" />
+
+        <!-- 我的银行卡end -->
+
+
+        <!-- 账户安全start -->
+
+        <TextView
+            android:id="@+id/my_hkmall_safe_tv"
+            style="@style/me_section_title_left"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/selector_section_item"
+            android:drawableRight="@drawable/icon_section_right_arrow"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:drawableLeft="@drawable/ic_my_hkmall_safe_tv"
+            android:drawablePadding="10dp"
+            android:tag="clickable"
+            android:text="@string/my_hkmall_safe" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="-1dp"
+            android:background="@color/white"
+            android:paddingLeft="15dp"
+            android:src="#d7d7d7" />
+
+        <TextView
+            android:id="@+id/my_hkmall_hx_enterprise"
+            style="@style/me_section_title_left"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/selector_section_item"
+            android:drawableRight="@drawable/icon_section_right_arrow"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:tag="clickable"
+            android:text="@string/my_hkmall_hx_enterprise"
+            android:visibility="gone" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="-1dp"
+            android:background="@color/white"
+            android:paddingLeft="15dp"
+            android:src="#d7d7d7"
+            android:visibility="visible" />
+
+        <RelativeLayout
+            android:id="@+id/hx_local_merchant_rela"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/selector_section_item"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:visibility="visible" >
+
+            <TextView
+                android:id="@+id/my_hkmall_local_merchant"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_my_hkmall_local_merchant"
+                android:drawablePadding="10dp"
+                android:text="@string/my_hkmall_local_merchant"
+                android:textColor="#333333"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center_vertical"
+                android:textColor="#e12228"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:drawablePadding="5dp"
+                android:drawableRight="@drawable/icon_section_right_arrow"
+                android:gravity="center_vertical"
+                android:text="主要针对线下惠卡买单服务"
+                android:textColor="#cccccc"
+                android:textSize="11sp" />
+        </RelativeLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:background="@color/common_bg_gray" />
+
+        <ImageView
+            android:id="@+id/guide_huika_iv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="150dp"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            android:src="@drawable/bg_me_huika_guide_iv" />
+    </LinearLayout>
+</ScrollView>
+</com.huika.lib.core.ext.widget.pulltorefresh.PullableLayout>

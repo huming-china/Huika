@@ -1,0 +1,165 @@
+package com.huika.hkmall;
+
+import android.content.Context;
+import com.huika.hkmall.model.bean.UserInfo;
+import com.huika.hkmall.ui.model.UserModel;
+import com.huika.hkmall.ui.pugin.BundleNotFoundActivity;
+import com.huika.hkmall.util.PreferHelper;
+import com.huika.lib.core.ext.LibCoreExtApp;
+import com.huika.lib.core.ext.utils.ToastMsg;
+import com.squareup.leakcanary.LeakCanary;
+import com.squareup.leakcanary.RefWatcher;
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
+import io.realm.RealmResults;
+import org.acdd.framework.InternalConstant;
+
+public class GlobalApplication extends LibCoreExtApp {
+  //static {
+  //  ACDDConfig.AUTO = new String[] {
+  //      "com.huika.pchannel", "com.huika.phfcircle", "com.zsy.pugin.game","com.zsy.pugin.imageloader"
+  //  };
+  //}
+
+  private static GlobalApplication instance;
+  private static Context context;
+  private UserModel userModel;
+
+  public static Context getContext() {
+    return context;
+  }
+
+  public static GlobalApplication getInstance() {
+    return instance;
+  }
+
+  //检测内存溢出
+  private RefWatcher refWatcher;
+
+  public static RefWatcher getRefWatcher(Context context) {
+    GlobalApplication application = (GlobalApplication) context.getApplicationContext();
+    return application.refWatcher;
+  }
+
+  @Override public void onCreate() {
+    super.onCreate();
+    InternalConstant.BundleNotFoundActivity = BundleNotFoundActivity.class;
+    instance = this;
+    context = getApplicationContext();
+    //检测内存溢出配置
+    if (BuildConfig.DEBUG) {
+      refWatcher = LeakCanary.install(this);
+    }
+  }
+
+  @Override protected void initDBRealmConfig() {
+    RealmConfiguration config =
+        //new RealmConfiguration.Builder(getApplicationContext()).name(Constant.REALM_DB_NAME)
+        new RealmConfiguration.Builder(getApplicationContext()).name("huika").build();
+    Realm.setDefaultConfiguration(config);
+  }
+
+  /**
+   * @return UserModel
+   * @Description:获取登陆用户模型
+   */
+  public UserModel getUserModel() {
+    if (null == userModel) {
+      userModel = new UserModel();
+      //这里的uid在login时保存的其实是userMoel.userId，对应在UserInfo中是myID、accountId，两个Id相同
+      String uid = PreferHelper.getInstance().getString(PreferHelper.KEY_LOGIN_UID);
+      //            UserInfo info = UserDao.getInstance(this).queryUserById(uid);
+      Realm realm = Realm.getDefaultInstance();
+      RealmResults<UserInfo> results =
+          realm.where(UserInfo.class).equalTo("accountId", uid).findAll();
+      ToastMsg.showToastMsg(this, results.size() + "");
+      if (results.size() > 0) {
+        UserInfo info = results.get(0);
+        if (info != null) {
+          userModel.userId = info.getMyID();
+          userModel.userId = info.getAccountId();
+          userModel.account = info.getAccount();
+          userModel.account = info.getUserName();
+          userModel.nickName = info.getNickName();
+          userModel.imageUrl = info.getHeaderImg();
+          userModel.signsture = info.getSign();
+          userModel.sex = info.getGender();
+          String realName = PreferHelper.getInstance().getString(PreferHelper.KEY_REAL_NAME);
+          String phone = PreferHelper.getInstance().getString(PreferHelper.KEY_PHONE);
+          int isDistribution = PreferHelper.getInstance().getInt(PreferHelper.KEY_IS_DISTRIBUTION);
+          userModel.realName = realName;
+          userModel.phone = phone;
+          userModel.isDistribution = isDistribution;
+        }
+      }
+    }
+    return userModel;
+  }
+
+  public void setUserModel(UserModel userModel) {
+    this.userModel = userModel;
+  }
+
+  public boolean isLogin() {
+    if (null != getUserModel()) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  //
+  //    private BroadcastReceiver receiverExitSystem = new BroadcastReceiver() {
+  //        @Override public void onReceive(Context context, Intent intent) {
+  //            GlobalApp.this.onTerminate();
+  //        }
+  //    };
+  //
+  //    /**更新用户信息**********************************/
+  //    /** 更新用户信息广播监听 */
+  //    private BroadcastReceiver updateInfoReceiver = new BroadcastReceiver() {
+  //
+  //        @Override public void onReceive(Context context, Intent intent) {
+  //            updateUserInfoHelper.executRequest();
+  //        }
+  //    };
+  //
+  //    /** 更新用户信息 end **********************************/
+  //
+  //    public AssetManager getAssetsss() {
+  //        AssetManager assetManager = getAssets();
+  //        return assetManager;
+  //    }
+  //
+  //    // ////////////////////////////通讯录相关操作监听【开始】lihy//////////////////////////////////////////////////////////////////////
+  //    private static final int QUERY_CONTACT_FINISH_SERVER = 2;
+  //    // PhoneIntentService查询手机通讯录结果成功后调用
+  //    public Handler mQueryHandler = new Handler() {
+  //
+  //        @Override public void handleMessage(Message msg) {
+  //            switch (msg.what) {
+  //                case QUERY_CONTACT_FINISH_SERVER:
+  //                    GetMoreCallBack getMoreCallBack = new GetMoreCallBack();
+  //                    HuiFansMobileHandler.getInstance()
+  //                            .synchronousMObilephoneData((HKAsyncQueryContactHandler) msg.obj, getMoreCallBack,
+  //                                    false);
+  //                    break;
+  //            }
+  //            super.handleMessage(msg);
+  //        }
+  //    };
+  //
+  //    class GetMoreCallBack extends ACallBack {
+  //        @Override public void onSuccess() {
+  //        }
+  //
+  //        @Override public void onError(String paramString) {
+  //
+  //        }
+  //    }
+  //
+  //    @Override protected void attachBaseContext(Context base) {
+  //        super.attachBaseContext(base);
+  //        MultiDex.install(this);
+  //    }
+  // ////////////////////////////通讯录相关操作监听【结束】lihy//////////////////////////////////////////////////////////////////////
+}

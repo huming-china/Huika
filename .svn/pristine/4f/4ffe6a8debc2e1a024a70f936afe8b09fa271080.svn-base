@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_common_bg"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appbar"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/show_login_different_tv"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="#fff9ee"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="登录成功后，请设置登录密码"
+            android:textColor="#666666"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_section"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="43dp">
+
+                <ImageView
+                    android:id="@+id/iv_name"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/icon_mobile_name" />
+
+                <com.huika.lib.ui.views.ClearableEditText
+                    android:id="@+id/login_edit_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/iv_name"
+                    android:background="@null"
+                    android:digits="@string/user_login_char"
+                    android:gravity="center_vertical"
+                    android:hint="手机号/惠信号"
+                    android:maxLength="30"
+                    android:singleLine="true"
+                    android:textColor="#333333"
+                    android:textColorHint="#b1b1b1"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="25dp"
+                android:background="#dfdfe1" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="43dp">
+
+                <ImageView
+                    android:id="@+id/iv_pwd"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/icon_pwd" />
+
+                <com.huika.lib.ui.views.ClearableEditText
+                    android:id="@+id/login_edit_pwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@+id/tv_varify_rl"
+                    android:layout_toRightOf="@+id/iv_pwd"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="@string/login_pwd"
+                    android:inputType="textPassword"
+                    android:maxLength="16"
+                    android:singleLine="true"
+                    android:textColor="#333333"
+                    android:textColorHint="#b1b1b1"
+                    android:textSize="16sp" />
+
+                <RelativeLayout
+                    android:id="@+id/tv_varify_rl"
+                    android:layout_width="89.5dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true">
+
+                    <View
+                        android:id="@+id/line"
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_toLeftOf="@+id/tv_varify"
+                        android:background="#dfdfe1" />
+
+                    <TextView
+                        android:id="@+id/tv_varify"
+                        android:layout_width="89dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center"
+                        android:text="@string/txt_getMsgCode_validate"
+                        android:textColor="#e12228"
+                        android:textSize="14sp"
+                        android:visibility="visible" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#dfdfe1" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/hk_common_btn_selector"
+            android:gravity="center"
+            android:text="@string/common_login"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="right"
+                android:padding="15dp"
+                android:text="@string/find_login_register"
+                android:textColor="#007aff"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_findPwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:padding="15dp"
+                android:text="@string/find_login_pwd"
+                android:textColor="#007aff"
+                android:textSize="13sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/help_howto_become_hf_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/explain_to_learn_more_tv"
+        android:layout_marginBottom="6dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="如何成为惠粉(分销商)?"
+        android:textColor="#007aff"
+        android:textSize="11sp" />
+
+    <TextView
+        android:id="@+id/explain_to_learn_more_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:tag="0"
+        android:text="分销商可获得惠信钱包%s元体验金,年化收益率,点击进入 >>"
+        android:textColor="#666666"
+        android:textSize="11sp"
+        android:visibility="invisible" />
+
+</RelativeLayout>

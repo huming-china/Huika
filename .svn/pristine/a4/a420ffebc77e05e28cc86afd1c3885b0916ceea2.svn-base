@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ptr="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="44dp"
+      android:background="@color/common_title_red"
+      android:gravity="center"
+      android:text="服务"
+      android:textColor="@color/white"
+      android:textSize="18sp"
+      />
+  <com.huika.lib.core.ext.widget.pulltorefresh.PullableLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:id="@+id/service_pullablelayout"
+      >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+      <android.support.v7.widget.RecyclerView
+          android:id="@+id/service_recycler_listview"
+          android:layout_below="@+id/advertisement_convenient_banner"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          >
+
+      </android.support.v7.widget.RecyclerView>
+
+    </ScrollView>
+
+  </com.huika.lib.core.ext.widget.pulltorefresh.PullableLayout>
+
+</LinearLayout>

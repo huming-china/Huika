@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_eaeaea"
+    android:gravity="center">
+
+    <RelativeLayout
+        android:id="@+id/service_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="1px"
+        android:layout_marginRight="1px"
+        android:layout_marginTop="1px"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/serivce_linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_section_item_service"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <!-- 原代码是LinearLayout中marginTop=20dp，为了加入点击交互效果添加一个View高20dp    add  by  zhanghao-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <ImageView
+                android:id="@+id/imageview_logo"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:id="@+id/textview_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="18dp"
+                android:layout_marginTop="9dp"
+                android:singleLine="true"
+                android:textColor="@color/color_333333"
+                android:textSize="12sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/gray_eaeaea" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageview_new_hot_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:scaleType="centerCrop" />
+    </RelativeLayout>
+
+</RelativeLayout>

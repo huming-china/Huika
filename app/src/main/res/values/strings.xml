@@ -1,0 +1,94 @@
+<resources>
+    <string name="app_name">HuiKa</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- 主框架 -->
+    <string name="common_shopping">购物</string>
+    <string name="common_consume">消费</string>
+    <string name="common_huifen">惠粉</string>
+    <string name="common_hk_service">服务</string>
+    <string name="common_me">我的</string>
+    <string name="common_share">分享</string>
+    <!-- 登录界面-->
+    <string name="txt_getMsgCode_validate">获取验证码</string>
+    <string name="common_login">登  录</string>
+    <string name="find_login_pwd">找回密码</string>
+    <string name="find_login_register">免费注册</string>
+    <string name="login_pwd">密码</string>
+    <string name="user_login_char">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@._</string>
+    <!-- 我的模块之帐户安全与设置 -->
+    <string name="my_account_safe">账户安全</string>
+    <string name="my_account_safe_email_tip">请通过电脑登录到惠卡网站完成邮箱验证</string>
+    <string name="my_account_safe_email_ok">请通过电脑登录到惠卡网站完成邮箱修改</string>
+    <string name="my_account_safe_realname_no">未完善</string>
+    <string name="my_account_safe_realname_ok">已认证</string>
+    <string name="my_account_safe_realname_check">审核中</string>
+    <string name="my_account_safe_realname_fail">审核失败</string>
+    <string name="my_account_safe_no_email">未验证</string>
+    <string name="my_account_safe_set_no">未设置</string>
+    <string name="my_account_safe_set_ok">已设置</string>
+    <string name="my_account_safe_degree">帐户安全程度</string>
+    <string name="my_account_safe_set_next">请设置以下项目保护帐号</string>
+    <string name="my_account_check_email">验证邮箱</string>
+    <string name="my_certification_name">姓 名 </string>
+    <string name="real_name_acertification">实名认证 </string>
+    <string name="my_certification_card_no">身份证号</string>
+    <string name="my_real_name_photo">相册</string>
+    <string name="my_real_name_message_error">*实名信息将与您的帐户提现银行卡绑定，请务必如实填写,绑定后不可自行修改。</string>
+    <string name="my_set_trade_pwd">设置交易密码</string>
+    <string name="my_modify_trade_pwd">修改交易密码</string>
+    <string name="my_small_price">小额免密码支付</string>
+    <string name="my_rebind_phone">更改绑定手机</string>
+    <string name="my_update_huixin">设置惠信号</string>
+    <string name="my_phone_has_bind">已经绑定手机</string>
+    <string name="my_modify_login">修改登录密码</string>
+    <string name="my_modify_onclick">点击进入</string>
+    <string name="my_first_real_name">请先进行实名认证</string>
+    <string name="my_input_real_idcard">请输入二代身份证号</string>
+    <string name="my_real_name">真实姓名</string>
+    <string name="tips_setting_trade_password">您还未设置交易密码，是否进行设置</string>
+    <string name="my_binder_phone_number">绑定手机号</string>
+    <string name="tv_input_phone">请输入手机</string>
+    <string name="tv_receive_SMS">收到的短信验证码</string>
+    <string name="et_sms_checkout">输入短信验证码</string>
+    <string name="et_remark_info">备注</string>
+    <string name="btn_afresh_send_checkout">重新发送校验码</string>
+    <string name="my_improve_data">完善资料</string>
+    <string name="my_improve_not_whole">为了您的账户安全，请进行实名认证</string>
+    <string name="my_improve_approving">实名认证审核中，审核成功方可提现</string>
+    <string name="my_improve_approve_error">实名认证审核失败，请重新提交审核</string>
+    <string name="my_improve_again">实名认证审核失败，请重新提交审核</string>
+    <string name="my_improve_not_pwd">为了您的账户安全，请先设置交易密码</string>
+    <string name="reset_login_pwd">重置密码</string>
+    <string name="input_phone_tip">输入您绑定的手机号</string>
+    <string name="input_phone_hint">输入手机号码</string>
+    <string name="input_msg_hint">输入短信验证码</string>
+    <string name="find_pwd_next">下一步</string>
+    <string name="preget_sms">请先获取验证码</string>
+    <string name="varigy_phone_unsame">输入手机号已变更，请重新获取验证码</string>
+    <string name="varigy_pwd_unsame">密码输入不一致</string>
+    <string name="msg_send_tip">您已阅读并同意使用条款，我们将发送验证码至此手机号码：%s</string>
+    <string name="reset_pwd_tip">* 密码长度8-16位，可使用字母、数字、符号组成，区分大小写，最少两种组合。</string>
+    <string name="find_trader_password">找回交易密码</string>
+    <string name="setting_trader_password">正在为%s重置交易密码</string>
+    <string name="you_bind_phone_num">您绑定的手机号码：%s</string>
+    <string name="resetting_trader_password">重设账号%s的交易密码</string>
+    <!-- 惠卡我的shicm -->
+    <string name="my_login">用户登录</string>
+    <string name="my_order_title">我的订单</string>
+    <string name="shop_order_title">购物订单</string>
+    <string name="my_order">全部订单</string>
+    <string name="my_order_pay">待付款</string>
+    <string name="my_order_receive">待收货</string>
+    <string name="my_order_over">待评价</string>
+    <string name="my_hkmall_account">我的财富</string>
+    <string name="my_news_title">文章内容</string>
+    <string name="my_hkmall_shipping_address">收货地址</string>
+    <string name="my_hkmall_bank">我的银行卡</string>
+    <string name="my_hkmall_safe">账户安全</string>
+    <string name="my_foot_mark">我的足迹</string>
+    <string name="my_hkmall_hx_enterprise">惠信事业</string>
+    <string name="my_hkmall_local_merchant">本地商家</string>
+    <string name="my_register">免费注册</string>
+    <!-- 惠卡我的shicm end -->
+</resources>
